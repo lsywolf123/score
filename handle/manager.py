@@ -34,7 +34,9 @@ class MerchantListHandle(BaseHandler):
         info = {'page_num': page_num,
                 'merchant_list': merchant_list,
                 'page': int(page),
-                'username': username
+                'username': username,
+                'type': type,
+                'content': content,
                 }
         self.render('manager-users.html', **info)
 
@@ -48,7 +50,9 @@ class MerchantListHandle(BaseHandler):
         info = {'page_num': page_num,
                 'merchant_list': search_merchant_list,
                 'page': 1,
-                'username': username
+                'username': username,
+                'type': type,
+                'content': content
                 }
         self.render('manager-users.html', **info)
 
