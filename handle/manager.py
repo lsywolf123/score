@@ -97,7 +97,7 @@ class AddMerchantHandle(BaseHandler):
                         phone=phone, email=email, address=address, deadline=deadline)
             return
         if ref:
-            self.redirect('/merchant-list?page=1')
+            self.redirect('/merchant-list?page=1&type=&content=')
 
 
 class UpdateMerchantHandle(BaseHandler):
