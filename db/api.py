@@ -348,7 +348,6 @@ def customer_added_list(session=None):
 
 def customer_added_list_by_created_time(created_time, session=None):
     return model_query(models.Customer, session=session). \
-        filter_by(merchant_id=None). \
         filter_by(created_at=created_time). \
         order_by(models.Customer.created_at.desc()).\
         all()
