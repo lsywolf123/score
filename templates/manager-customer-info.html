@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <title>金豆管理后台</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="static/lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="static/lib/font-awesome/css/font-awesome.css">
+
+    <script src="static/lib/jquery-1.11.1.min.js" type="text/javascript"></script>
+
+
+
+    <link rel="stylesheet" type="text/css" href="static/stylesheets/theme.css">
+    <link rel="stylesheet" type="text/css" href="static/stylesheets/premium.css">
+
+</head>
+<body class=" theme-blue">
+
+<!-- Demo page code -->
+
+<script type="text/javascript">
+    $(function () {
+        var match = document.cookie.match(new RegExp('color=([^;]+)'));
+        if (match) var color = match[1];
+        if (color) {
+            $('body').removeClass(function (index, css) {
+                return (css.match(/\btheme-\S+/g) || []).join(' ')
+            })
+            $('body').addClass('theme-' + color);
+        }
+
+        $('[data-popover="true"]').popover({html: true});
+
+    });
+</script>
+<style type="text/css">
+    #line-chart {
+        height: 300px;
+        width: 800px;
+        margin: 0px auto;
+        margin-top: 1em;
+    }
+
+    .navbar-default .navbar-brand, .navbar-default .navbar-brand:hover {
+        color: #fff;
+    }
+</style>
+
+<script type="text/javascript">
+    $(function () {
+        var uls = $('.sidebar-nav > ul > *').clone();
+        uls.addClass('visible-xs');
+        $('#main-menu').append(uls.clone());
+    });
+</script>
+
+<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!-- Le fav and touch icons -->
+<link rel="shortcut icon" href="../assets/ico/favicon.ico">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+
+
+<!--[if lt IE 7 ]>
+<body class="ie ie6"> <![endif]-->
+<!--[if IE 7 ]>
+<body class="ie ie7 "> <![endif]-->
+<!--[if IE 8 ]>
+<body class="ie ie8 "> <![endif]-->
+<!--[if IE 9 ]>
+<body class="ie ie9 "> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+
+<!--<![endif]-->
+
+<div class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="" href="/index"><span class="navbar-brand"><span
+                class="fa fa-paper-plane"></span> 金豆管理系统</span></a>
+    </div>
+    <div class="navbar-collapse collapse" style="height: 1px;">
+        <ul id="main-menu" class="nav navbar-nav navbar-right">
+            <li class="dropdown hidden-xs">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-user padding-right-small"
+                              style="position:relative;top: 3px;"></span> {{username}}
+                    <i class="fa fa-caret-down"></i>
+                </a>
+
+                <ul class="dropdown-menu">
+                    <li><a tabindex="-1" href="/logout">注销</a></li>
+                    <li><a tabindex="-1" href="/update-password">修改密码</a></li>
+                    <li><a tabindex="-1" href="/index">返回首页</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="sidebar-nav">
+    <ul>
+        <li><a href="#" data-target=".dashboard-menu" class="nav-header" data-toggle="collapse"><i
+                class="fa fa-fw fa-dashboard"></i> 商户管理<i class="fa fa-collapse"></i></a></li>
+        <li>
+            <ul class="dashboard-menu nav nav-list collapse in">
+                <li><a href="/index"><span class="fa fa-caret-right"></span> 总览</a></li>
+                <li><a href="/manager-merchant-list?page=1"><span class="fa fa-caret-right"></span> 商户列表</a></li>
+                <li><a href="/add-merchant"><span class="fa fa-caret-right"></span> 新增商户</a></li>
+            </ul>
+        </li>
+        <li><a href="#" data-target=".premium-menu" class="nav-header collapsed" data-toggle="collapse"><i
+                class="fa fa-fw fa-fighter-jet"></i> 客户管理<i class="fa fa-collapse"></i></a></li>
+        <li>
+            <ul class="premium-menu nav nav-list collapse">
+                <li><a href="/manager-customer-list?page=1&type=&content="><span class="fa fa-caret-right"></span> 客户列表</a>
+                </li>
+                <li><a href="/add-customer"><span class="fa fa-caret-right"></span> 新增客户</a></li>
+                <li><a href="/add-customer-list?page=1"><span class="fa fa-caret-right"></span> 新增客户查询</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div class="content">
+    <div class="header">
+        <h1 class="page-title">用户信息</h1>
+        <ul class="breadcrumb">
+            <li><a href="/index">首页</a> </li>
+            <li class="active">用户</li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <p><font size="3" face="Verdana"><strong>用户编号：</strong></font><font size="1" face="Verdana">{{customer_info['serial_num']}}</font>
+        </p>
+        <div class="panel panel-default" style="margin-top:30px">
+            <div class="panel-heading">个人资料</div>
+            <div class="panel-body">
+                <ul class="list-unstyled list-info">
+                    <li>
+                        <span class="text-info fa fa-user fa-fw"></span>
+                        姓名：{{customer_info['name']}}
+                    </li>
+                    <li>
+                        <span class="text-info fa fa-envelope fa-fw"></span>
+                        邮箱：{{customer_info['email']}}
+                    </li>
+                    <li>
+                        <span class="text-info fa fa-phone fa-fw"></span>
+                        联系电话：{{customer_info['phone']}}
+                    </li>
+                    <li>
+                        <span class="text-info fa fa-fw fa-legal fa-fw"></span>
+                        身份证：{{customer_info['identify_id']}}
+                    </li>
+                    <li>
+                        <span class="text-info fa fa-comment fa-fw"></span>
+                        微信：{{customer_info['we_chat']}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="panel panel-default" style="margin-top:30px">
+            <div class="panel-heading">金豆明细</div>
+            <div class="panel-body">
+                <ul class="list-unstyled list-info">
+                    <li>
+                        <span class="text-info fa fa-paper-plane fa-fw"></span>
+                        历史总金豆：{{customer_info['total_gb']}}
+                    </li>
+                    <li>
+                        <span class="text-info fa fa-paper-plane fa-fw"></span>
+                        当前总金豆：{{customer_info['gb']}}
+                    </li>
+                    <li>
+                        <span class="text-info fa fa-paper-plane fa-fw"></span>
+                        赠送金豆：{{customer_info['given_gb']}}
+                    </li>
+                    <li>
+                        <span class="text-info fa fa-paper-plane fa-fw"></span>
+                        推荐他人消费所获金豆：{{customer_info['consume_gb']}}
+                    </li>
+                    <li>
+                        <span class="text-info fa fa-paper-plane fa-fw"></span>
+                        金豆兑换次数：{{customer_info['gb_exchange_count']}}
+                    </li>
+                    <li>
+                        <span class="text-info fa fa-paper-plane fa-fw"></span>
+                        兑换总金额：{{customer_info['gain_money']}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="panel panel-default" style="margin-top:30px">
+            <div class="panel-heading">消费明细</div>
+            <div class="panel-body">
+                <ul class="list-unstyled list-info">
+                    <li style="margin-top:10px">
+                        <span class="text-info fa fa-paper-plane fa-fw"></span>
+                        消费明细：
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>消费人</th>
+                                <th>消费金额</th>
+                                <th>获得金豆</th>
+                                <th>消费日期</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                {% for consume in consume_list %}
+                                <tr>
+                                    <th>{{consume['num']}}</th>
+                                    <td>{{consume['consumer_name']}}</td>
+                                    <td>{{consume['consume_money']}}元</td>
+                                    <td>{{int(consume['consume_money'] * consume['multiple'])}}</td>
+                                    <td>{{consume['created_at']}}</td>
+                                </tr>
+                                {% end %}
+                            </tbody>
+                        </table>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <footer style="padding-top:17%">
+            <hr>
+            <!--
+                <p class="pull-right">A <a href="http://www.baidu.com" target="_blank">长沙市铂尔尼传媒有限责任公司</a> by <a href="http://www.portnine.com" target="_blank">Portnine</a></p>
+                <p>© 2017 <a href="http://www.portnine.com" target="_blank">Portnine</a></p>
+                -->
+        </footer>
+    </div>
+</div>
+
+
+<script src="static/lib/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript">
+    $("[rel=tooltip]").tooltip();
+    $(function () {
+        $('.demo-cancel-click').click(function () {
+            return false;
+        });
+    });
+</script>
+
+
+</body></html>
