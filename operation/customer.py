@@ -77,7 +77,9 @@ def get_customer_gb_datail_list(customer_id, page):
 # 根据customer_id查找活动
 def gb_activity_by_customer_id(customer_id):
     merchant_id = db.customer_get_by_id(customer_id)['merchant_id']
-    return dict(db.activity_get_by_merchant_id(merchant_id))
+    result = db.activity_get_by_merchant_id(merchant_id)
+    activity_dict = dict(result) if result else {'multiple': '***', 'start_time': '***', 'end_time': '***'}
+    return activity_dict
 
 
 # 根据customer_id更新客户基本信息

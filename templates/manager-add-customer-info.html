@@ -154,6 +154,7 @@
                 <th>#</th>
                 <th>账号</a></th>
                 <th>密码</a></th>
+                <th>是否绑定</a></th>
             </tr>
             </thead>
             <tbody>
@@ -162,6 +163,11 @@
                 <td>{{added_customer_info_dict['num']}}</td>
                 <td>{{added_customer_info_dict['serial_num']}}</td>
                 <td>{{added_customer_info_dict['password']}}</td>
+                {% if added_customer_info_dict['merchant_id'] %}
+                <td>已绑定</td>
+                {% else %}
+                <td>未绑定</td>
+                {% end%}
             </tr>
             {% end %}
             </tbody>
