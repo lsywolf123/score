@@ -119,6 +119,12 @@ def merchant_get_by_id(merchant_id, session=None):
             first()
 
 
+def merchant_get_by_name(name, session=None):
+    return model_query(models.Merchant, session=session).\
+            filter_by(name=name).\
+            first()
+
+
 def merchant_get_by_user_id(user_id, session=None):
     return model_query(models.Merchant, session=session).\
             filter_by(user_id=user_id).\
@@ -495,6 +501,13 @@ def search_all_customer_count_by_phone(phone, session=None):
     return query
 
 
+def search_all_customer_count_by_merchant_id(merchant_id, session=None):
+    query = model_query(models.Customer, session=session). \
+        filter_by(merchant_id=merchant_id). \
+        count()
+    return query
+
+
 def search_all_customer_count_by_gb_range(min_gb, max_gb, session=None):
     query = model_query(models.Customer, session=session). \
         filter(models.Customer.merchant_id != None). \
@@ -524,6 +537,13 @@ def customer_all_list_by_phone(phone, session=None):
     return model_query(models.Customer, session=session). \
         filter(models.Customer.merchant_id != None). \
         filter_by(phone=phone). \
+        order_by(models.Customer.gb.desc()).\
+        all()
+
+
+def customer_all_list_by_merchant_id(merchant_id, session=None):
+    return model_query(models.Customer, session=session). \
+        filter_by(merchant_id=merchant_id). \
         order_by(models.Customer.gb.desc()).\
         all()
 

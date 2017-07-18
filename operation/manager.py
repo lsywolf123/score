@@ -264,6 +264,8 @@ def customer_list(page):
     for customer in temp:
         c_dict = dict(customer)
         c_dict['num'] = count
+        merchant_id = customer['merchant_id']
+        c_dict['merchant'] = db.merchant_get_by_id(merchant_id)['name']
         c_list.append(c_dict)
         count += 1
     return c_list[10*(page-1):10*page]
@@ -281,6 +283,10 @@ def search_customer_count(type, content):
         min_gb = int(content) * 5000
         max_gb = int(content) * 5000 + 5000 if content != '8'else 1000000000
         return db.search_all_customer_count_by_gb_range(min_gb, max_gb)
+    elif type == '4':
+        merchant = db.merchant_get_by_name(content)
+        return db.search_all_customer_count_by_merchant_id(merchant['id'])
+
 
 
 # 被查询客户列表
@@ -296,6 +302,9 @@ def get_search_customer_list(page, type, content):
         min_gb = int(content) * 5000
         max_gb = int(content) * 5000 + 5000 if content != '8'else 1000000000
         temp = db.customer_all_list_by_gb_range(min_gb, max_gb)
+    elif type == '4':
+        merchant = db.merchant_get_by_name(content)
+        temp = db.customer_all_list_by_merchant_id(merchant['id'])
     page_num = count/10 + 1 if count % 10 else count/10
     if page < 1 or page > page_num:
         return []
@@ -304,6 +313,8 @@ def get_search_customer_list(page, type, content):
     for customer in temp:
         values = dict(customer)
         values['num'] = count
+        merchant_id = customer['merchant_id']
+        values['merchant'] = db.merchant_get_by_id(merchant_id)['name']
         c_list.append(values)
         count += 1
     return c_list[10*(page-1):10*page]

@@ -180,12 +180,15 @@
                     <option value="7">35000-40000金豆</option>
                     <option value="8">40000金豆以上</option>
                 </select>
+                <input name="content4" id="div4" type="text" class="form-control span12 pull-right"
+                       style="display:none;width:10%;margin-right:10px">
                 <select name="type" id="div100" class="form-control pull-right" onchange="Cmd(this)"
                         style="width:10%;margin-right:10px">
                     <option value="0">编号</option>
                     <option value="1">姓名</option>
                     <option value="2">联系方式</option>
                     <option value="3">金豆数量</option>
+                    <option value="4">所属商家</option>
                 </select>
             </form>
             <!--
@@ -200,6 +203,7 @@
                 <th>#</th>
                 <th><a href="#">编号</a></th>
                 <th><a href="#">姓名</a></th>
+                <th><a href="#">所属商家</a></th>
                 <th><a href="#">金豆数量</a></th>
                 <th><a href="#">联系方式</a></th>
                 <th><a href="#">兑换次数</a></th>
@@ -213,6 +217,7 @@
                 <td>{{customer['num']}}</td>
                 <td>{{customer['serial_num']}}</td>
                 <td>{{customer['name']}}</td>
+                <td>{{customer['merchant']}}</td>
                 <td>{{customer['gb']}}</td>
                 <td>{{customer['phone']}}</td>
                 <td>{{customer['gb_exchange_count']}}</td>
