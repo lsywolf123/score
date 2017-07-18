@@ -342,7 +342,6 @@ def customer_recent_list_by_merchant_id(merchant_id, session=None):
 
 def customer_added_list(session=None):
     return model_query(models.Customer, session=session). \
-        filter_by(merchant_id=None). \
         order_by(models.Customer.created_at.desc()).\
         all()
 
