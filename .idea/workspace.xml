@@ -3,7 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="a80d52c6-ed9d-4264-9559-f0276bcbebe7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/handle/manager.py" afterPath="$PROJECT_DIR$/handle/manager.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/models.py" afterPath="$PROJECT_DIR$/db/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/table_inition.py" afterPath="$PROJECT_DIR$/db/table_inition.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/operation/consume.py" afterPath="$PROJECT_DIR$/operation/consume.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/operation/exception.py" afterPath="$PROJECT_DIR$/operation/exception.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/operation/merchant.py" afterPath="$PROJECT_DIR$/operation/merchant.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/customer-info.html" afterPath="$PROJECT_DIR$/templates/customer-info.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/manager-customer-info.html" afterPath="$PROJECT_DIR$/templates/manager-customer-info.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/manager-customers.html" afterPath="$PROJECT_DIR$/templates/manager-customers.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/merchant-user-info.html" afterPath="$PROJECT_DIR$/templates/merchant-user-info.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/merchant-users.html" afterPath="$PROJECT_DIR$/templates/merchant-users.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,17 +27,17 @@
     <SUITE FILE_PATH="coverage/bonier_score$customer.coverage" NAME="customer Coverage Results" MODIFIED="1500355717431" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/operation" />
     <SUITE FILE_PATH="coverage/bonier_score$table_inition.coverage" NAME="table_inition Coverage Results" MODIFIED="1500269277776" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/db" />
     <SUITE FILE_PATH="coverage/bonier_score$manager.coverage" NAME="manager Coverage Results" MODIFIED="1500198639084" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/operation" />
-    <SUITE FILE_PATH="coverage/bonier_score$main.coverage" NAME="main Coverage Results" MODIFIED="1500439373130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/bonier_score$main.coverage" NAME="main Coverage Results" MODIFIED="1500444734091" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/bonier_score$login.coverage" NAME="login Coverage Results" MODIFIED="1499888753053" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/handle" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="api.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/api.py">
+      <file leaf-file-name="merchant-users.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/merchant-users.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10241">
-              <caret line="543" column="36" lean-forward="false" selection-start-line="543" selection-start-column="4" selection-end-line="543" selection-end-column="36" />
+            <state relative-caret-position="439">
+              <caret line="227" column="16" lean-forward="false" selection-start-line="227" selection-start-column="16" selection-end-line="227" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -37,28 +46,38 @@
       <file leaf-file-name="manager-customers.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/manager-customers.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="190" column="36" lean-forward="false" selection-start-line="190" selection-start-column="36" selection-end-line="190" selection-end-column="36" />
+            <state relative-caret-position="302">
+              <caret line="222" column="57" lean-forward="false" selection-start-line="222" selection-start-column="57" selection-end-line="222" selection-end-column="57" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="manager.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/handle/manager.py">
+      <file leaf-file-name="customer-info.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/customer-info.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="679">
-              <caret line="100" column="24" lean-forward="false" selection-start-line="100" selection-start-column="24" selection-end-line="100" selection-end-column="24" />
+            <state relative-caret-position="416">
+              <caret line="215" column="25" lean-forward="false" selection-start-line="215" selection-start-column="25" selection-end-line="215" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="manager.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/operation/manager.py">
+      <file leaf-file-name="merchant-user-info.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/merchant-user-info.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5738">
-              <caret line="306" column="14" lean-forward="false" selection-start-line="306" selection-start-column="14" selection-end-line="306" selection-end-column="14" />
+            <state relative-caret-position="324">
+              <caret line="215" column="0" lean-forward="false" selection-start-line="215" selection-start-column="0" selection-end-line="221" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="manager-customer-info.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/manager-customer-info.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="400">
+              <caret line="207" column="0" lean-forward="false" selection-start-line="207" selection-start-column="0" selection-end-line="213" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -99,6 +118,7 @@
       <find>&lt;</find>
       <find>favicon.ico</find>
       <find>customer_info</find>
+      <find>消费</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -120,9 +140,6 @@
         <option value="$PROJECT_DIR$/templates/merchant-update-rule-info.html" />
         <option value="$PROJECT_DIR$/templates/merchant-rule.html" />
         <option value="$PROJECT_DIR$/templates/merchant-exchange-goldbean.html" />
-        <option value="$PROJECT_DIR$/operation/exception.py" />
-        <option value="$PROJECT_DIR$/db/table_inition.py" />
-        <option value="$PROJECT_DIR$/db/models.py" />
         <option value="$PROJECT_DIR$/templates/merchant-give_goldbean.html" />
         <option value="$PROJECT_DIR$/templates/merchant-give-goldbean.html" />
         <option value="$PROJECT_DIR$/templates/manager-index.html" />
@@ -133,23 +150,17 @@
         <option value="$PROJECT_DIR$/templates/merchant-update-goldbean.html" />
         <option value="$PROJECT_DIR$/templates/merchant-user-bind-consumption.html" />
         <option value="$PROJECT_DIR$/templates/merchant-user-consumpt.html" />
-        <option value="$PROJECT_DIR$/templates/merchant-users.html" />
         <option value="$PROJECT_DIR$/templates/merchant-update-password.html" />
         <option value="$PROJECT_DIR$/templates/merchant-index.html" />
         <option value="$PROJECT_DIR$/operation/user.py" />
         <option value="$PROJECT_DIR$/handle/update_password.py" />
         <option value="$PROJECT_DIR$/templates/update-password.html" />
-        <option value="$PROJECT_DIR$/templates/manager-customer-info.html" />
         <option value="$PROJECT_DIR$/templates/manager-add-customer-list.html" />
         <option value="$PROJECT_DIR$/handle/login.py" />
-        <option value="$PROJECT_DIR$/operation/merchant.py" />
         <option value="$PROJECT_DIR$/handle/index.py" />
         <option value="$PROJECT_DIR$/templates/customer-index.html" />
         <option value="$PROJECT_DIR$/templates/customer-goldbean-info.html" />
         <option value="$PROJECT_DIR$/templates/manager-users.html" />
-        <option value="$PROJECT_DIR$/operation/consume.py" />
-        <option value="$PROJECT_DIR$/templates/customer-info.html" />
-        <option value="$PROJECT_DIR$/templates/merchant-user-info.html" />
         <option value="$PROJECT_DIR$/templates/customer-info-update.html" />
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/handle/merchant.py" />
@@ -160,8 +171,17 @@
         <option value="$PROJECT_DIR$/operation/customer.py" />
         <option value="$PROJECT_DIR$/db/api.py" />
         <option value="$PROJECT_DIR$/operation/manager.py" />
-        <option value="$PROJECT_DIR$/templates/manager-customers.html" />
         <option value="$PROJECT_DIR$/handle/manager.py" />
+        <option value="$PROJECT_DIR$/db/models.py" />
+        <option value="$PROJECT_DIR$/db/table_inition.py" />
+        <option value="$PROJECT_DIR$/operation/consume.py" />
+        <option value="$PROJECT_DIR$/operation/exception.py" />
+        <option value="$PROJECT_DIR$/operation/merchant.py" />
+        <option value="$PROJECT_DIR$/templates/merchant-users.html" />
+        <option value="$PROJECT_DIR$/templates/merchant-user-info.html" />
+        <option value="$PROJECT_DIR$/templates/manager-customer-info.html" />
+        <option value="$PROJECT_DIR$/templates/manager-customers.html" />
+        <option value="$PROJECT_DIR$/templates/customer-info.html" />
       </list>
     </option>
   </component>
@@ -232,7 +252,35 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="operation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bonier_score" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bonier_score" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="handle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bonier_score" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bonier_score" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="db" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -627,22 +675,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/merchant-update-user.html" />
     <entry file="file://$PROJECT_DIR$/templates/merchant-add-user.html" />
-    <entry file="file://$PROJECT_DIR$/db/table_inition.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="124" column="38" lean-forward="false" selection-start-line="124" selection-start-column="38" selection-end-line="124" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="195" column="12" lean-forward="true" selection-start-line="195" selection-start-column="12" selection-end-line="195" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/merchant-consume-list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -771,13 +804,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/manager-customer-info.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="800">
-          <caret line="138" column="6" lean-forward="false" selection-start-line="138" selection-start-column="6" selection-end-line="138" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/operation/user.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="61">
@@ -811,13 +837,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="995">
           <caret line="65" column="80" lean-forward="false" selection-start-line="65" selection-start-column="80" selection-end-line="65" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/merchant-users.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="238" column="0" lean-forward="false" selection-start-line="238" selection-start-column="0" selection-end-line="246" selection-end-column="21" />
+          <folding>
+            <element signature="e#62#90#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -835,28 +857,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/merchant-user-info.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="224" column="28" lean-forward="false" selection-start-line="224" selection-start-column="28" selection-end-line="224" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/operation/consume.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="129" column="30" lean-forward="false" selection-start-line="129" selection-start-column="4" selection-end-line="129" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/customer-info.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="148" column="12" lean-forward="false" selection-start-line="148" selection-start-column="12" selection-end-line="148" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/manager-update-user.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
@@ -864,24 +864,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/operation/merchant.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="73" column="4" lean-forward="false" selection-start-line="73" selection-start-column="4" selection-end-line="73" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/customer-info-update.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
           <caret line="170" column="118" lean-forward="false" selection-start-line="170" selection-start-column="118" selection-end-line="170" selection-end-column="118" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/handle/merchant.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="60" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -920,6 +906,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="38" column="42" lean-forward="true" selection-start-line="38" selection-start-column="42" selection-end-line="38" selection-end-column="42" />
+          <folding>
+            <element signature="e#62#77#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -953,26 +942,106 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/operation/manager.py">
+    <entry file="file://$PROJECT_DIR$/db/table_inition.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5738">
-          <caret line="306" column="14" lean-forward="false" selection-start-line="306" selection-start-column="14" selection-end-line="306" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/manager-customers.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="190" column="36" lean-forward="false" selection-start-line="190" selection-start-column="36" selection-end-line="190" selection-end-column="36" />
+        <state relative-caret-position="372">
+          <caret line="60" column="47" lean-forward="false" selection-start-line="60" selection-start-column="31" selection-end-line="60" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/handle/manager.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="679">
+        <state relative-caret-position="508">
           <caret line="100" column="24" lean-forward="false" selection-start-line="100" selection-start-column="24" selection-end-line="100" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/operation/manager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2818">
+          <caret line="49" column="33" lean-forward="false" selection-start-line="49" selection-start-column="31" selection-end-line="49" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/handle/merchant.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="167" column="38" lean-forward="false" selection-start-line="167" selection-start-column="38" selection-end-line="167" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="153" column="20" lean-forward="false" selection-start-line="153" selection-start-column="4" selection-end-line="153" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/operation/consume.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="35" column="29" lean-forward="false" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/operation/exception.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="55" column="6" lean-forward="false" selection-start-line="55" selection-start-column="6" selection-end-line="55" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/operation/merchant.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="221" column="29" lean-forward="false" selection-start-line="221" selection-start-column="29" selection-end-line="221" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/merchant-user-info.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="215" column="0" lean-forward="false" selection-start-line="215" selection-start-column="0" selection-end-line="221" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/merchant-users.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="439">
+          <caret line="227" column="16" lean-forward="false" selection-start-line="227" selection-start-column="16" selection-end-line="227" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/manager-customers.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="222" column="57" lean-forward="false" selection-start-line="222" selection-start-column="57" selection-end-line="222" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/manager-customer-info.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="207" column="0" lean-forward="false" selection-start-line="207" selection-start-column="0" selection-end-line="213" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/customer-info.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="215" column="25" lean-forward="false" selection-start-line="215" selection-start-column="25" selection-end-line="215" selection-end-column="25" />
           <folding />
         </state>
       </provider>

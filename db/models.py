@@ -151,6 +151,7 @@ class Customer(BASE, ScoreBase):
     total_gb = Column(Integer, nullable=False, default=0)
     given_gb = Column(Integer, nullable=False, default=0)
     consume_gb = Column(Integer, nullable=False, default=0)
+    qualification_gb = Column(Integer, nullable=False, default=0)
     gb_exchange_count = Column(Integer, nullable=False, default=0)
     gain_money = Column(Integer, nullable=False, default=0)
 

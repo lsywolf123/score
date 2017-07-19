@@ -10,6 +10,7 @@ from db import api as db
 
 # 生成消费信息
 def general_consume_info(merchant_id, consumer_name, consume_money, consume_content, serial_num):
+    real_consume_money = consume_money
     values = {
         'merchant_id': merchant_id,
         'consumer_name': consumer_name,
@@ -31,7 +32,8 @@ def general_consume_info(merchant_id, consumer_name, consume_money, consume_cont
         recomender_values = {
             'gb': recomender['gb'] + int(consume_money),
             'total_gb': recomender['total_gb'] + int(consume_money),
-            'consume_gb': recomender['consume_gb'] + int(consume_money)
+            'consume_gb': recomender['consume_gb'] + int(consume_money),
+            'qualification_gb': recomender['qualification_gb'] + int(real_consume_money)
         }
         db.customer_update_by_id(recomender['id'], recomender_values)
     return db.consume_create(values)

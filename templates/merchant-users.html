@@ -211,6 +211,7 @@
                 <th><a href="#">编号</a></th>
                 <th><a href="#">姓名</a></th>
                 <th><a href="#">金豆数量</a></th>
+                <th><a href="#">推荐基金</a></th>
                 <th><a href="#">联系方式</a></th>
                 <th><a href="#">兑换次数</a></th>
                 <th><a href="#">兑换金额</a></th>
@@ -224,6 +225,7 @@
                 <td>{{customer['serial_num']}}</td>
                 <td>{{customer['name']}}</td>
                 <td>{{customer['gb']}}</td>
+                <td>{{customer['qualification_gb']}}</td>
                 <td>{{customer['phone']}}</td>
                 <td>{{customer['gb_exchange_count']}}</td>
                 <td>{{customer['gain_money']}}</td>
@@ -242,7 +244,7 @@
             {% for i in range(page_num) %}
             <li><a href="?page={{i+1}}&type={{type}}&content={{content}}">{{i+1}}</a></li>
             {% end %}
-            {% if page < page_num%}
+            {% if page < page_num %}
             <li><a href="?page={{page+1}}&type={{type}}&content={{content}}">&raquo;</a></li>
             {% end %}
         </ul>

@@ -56,3 +56,8 @@ class CustomerInfoNotMatch(ScoreException):
 class CustomerGoldbeanNotEnough(ScoreException):
     code = 10007
     message = '客户金豆不足兑换该档次!'
+
+
+class CustomerHasNoQualification(ScoreException):
+    code = 10008
+    message = '客户的推荐基金没达到5000,没有兑换资格'
