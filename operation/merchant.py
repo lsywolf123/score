@@ -320,7 +320,7 @@ def give_goldbean(customer_id, gb_num):
     values = {
         'merchant_id': customer['merchant_id'],
         'consumer_name': '商家',
-        'customer_id': 'customer_id',
+        'customer_id': customer_id,
         'consume_money': int(gb_num),
         'multiple': 1,
         'consume_content': '商家赠送'
