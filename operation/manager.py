@@ -62,13 +62,11 @@ def add_merchant(name, host_name, phone, email, address, deadline, password='123
 
 
 # 添加客户
-def add_customer(add_num):
-    last_customer = db.customer_last()
-    init_serial_num = 900000001 if not last_customer else last_customer['serial_num'] + 1
+def add_customer(start_num, end_num):
     now = datetime.datetime.now()
-    for i in range(add_num):
+    for i in range(end_num - start_num + 1):
         values = {
-            'serial_num': init_serial_num + i
+            'serial_num': start_num + i
         }
         ref = user.create_user(values['serial_num'], general_num(), '3')
         values['user_id'] = ref['id']
@@ -156,6 +154,11 @@ def get_added_customer_info(created_time, page):
     if page < 1 or page > page_num:
         return []
     return added_customer_info_list[10*(page-1):10*page]
+
+
+# 新增客户详细信息数量
+def get_add_customer_info_count(created_time):
+    return db.customer_added_count_by_created_time(created_time)
 
 
 # 被查询商户列表
