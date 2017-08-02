@@ -98,7 +98,7 @@ class AddMerchantHandle(BaseHandler):
             return
         if ref:
             self.render('manager-add-user.html', username=username, message='添加成功',  name='', host_name='',
-                        phone='',email='', address='', deadline=now())
+                        phone='', email='', address='', deadline=now())
 
 
 class UpdateMerchantHandle(BaseHandler):
@@ -152,31 +152,42 @@ class AddCustomerHandle(BaseHandler):
         if self.get_secure_cookie('role') != '1':
             self.redirect('/index')
         username = self.get_secure_cookie('username')
-        self.render('manager-add-customer.html', username=username, add_num='', message='')
+        self.render('manager-add-customer.html', username=username, start_num='', end_num='', message='')
 
     def post(self):
         message = None
         username = self.get_secure_cookie('username')
-        add_num = self.get_argument('add_num')
+        start_num = self.get_argument('start_num')
+        end_num = self.get_argument('end_num')
         password = self.get_argument('password')
         user_ref = user.get_user_by_username(username)
         if password != user_ref['password']:
             message = '密码错误'
-        if not add_num:
-            message = '增加个数为必填项'
+        if not start_num:
+            message = '起始编号为必填项'
+        if not end_num:
+            message = '结束编号为必填项'
         try:
-            if int(add_num) < 0:
-                message = '增加个数必须为大于0的数字'
+            if int(start_num) < 0:
+                message = '起始编号必须为大于0的数字'
+            if int(end_num) < 0:
+                message = '结束编号必须为大于0的数字'
+            if int(start_num) > int(end_num):
+                message = '结束编号必须不小于起始编号'
         except:
-            message = '增加个数必须是个数字'
+            message = '编号必须是数字'
         if not password:
             message = '密码为必填项'
         if message:
-            self.render('manager-add-customer.html', username=username, add_num='', message=message)
+            self.render('manager-add-customer.html', username=username, start_num='', end_num='', message=message)
             return
-        ref = manager.add_customer(int(add_num))
+        try:
+            ref = manager.add_customer(int(start_num), int(end_num))
+        except Exception as e:
+            self.render('manager-add-customer.html', username=username, start_num='', end_num='', message=e.message)
+            return
         if ref:
-            self.render('manager-add-customer.html', username=username, add_num='', message='添加成功')
+            self.render('manager-add-customer.html', username=username, start_num='', end_num='', message='添加成功')
             return
 
 
@@ -204,11 +215,13 @@ class CustomerAddedInfoHandle(BaseHandler):
         page = self.get_argument('page')
         created_time = self.get_argument('created_time')
         added_customer_info_list = manager.get_added_customer_info(created_time, int(page))
-        page_num = len(added_customer_info_list) / 10 + 1 if len(added_customer_info_list) % 10 else len(added_customer_info_list) / 10
+        added_customer_info_count = manager.get_add_customer_info_count(created_time)
+        page_num = added_customer_info_count / 10 + 1 if added_customer_info_count % 10 else added_customer_info_count / 10
         info = {'page_num': page_num,
                 'added_customer_info_list': added_customer_info_list,
                 'page': int(page),
-                'username': username
+                'username': username,
+                'created_time': created_time
                 }
         self.render('manager-add-customer-info.html', **info)
 

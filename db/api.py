@@ -359,6 +359,13 @@ def customer_added_list_by_created_time(created_time, session=None):
         all()
 
 
+def customer_added_count_by_created_time(created_time, session=None):
+    return model_query(models.Customer, session=session). \
+        filter_by(created_at=created_time). \
+        order_by(models.Customer.created_at.desc()).\
+        count()
+
+
 def customer_last(session=None):
     return model_query(models.Customer, session=session). \
         order_by(models.Customer.serial_num.desc()).\

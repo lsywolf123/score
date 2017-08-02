@@ -152,9 +152,9 @@
             <thead>
             <tr>
                 <th>#</th>
-                <th>账号</a></th>
-                <th>密码</a></th>
-                <th>是否绑定</a></th>
+                <th>账号</th>
+                <th>密码</th>
+                <th>是否绑定</th>
             </tr>
             </thead>
             <tbody>
@@ -174,13 +174,13 @@
         </table>
         <ul class="pagination">
             {% if page > 1%}
-            <li><a href="?page={{page-1}}">&laquo;</a></li>
+            <li><a href="?created_time={{created_time}}&page={{page-1}}">&laquo;</a></li>
             {% end %}
             {% for i in range(page_num) %}
-            <li><a href="?page={{i+1}}">{{i+1}}</a></li>
+            <li><a href="?created_time={{created_time}}&page={{i+1}}">{{i+1}}</a></li>
             {% end %}
             {% if page < page_num%}
-            <li><a href="?page={{page+1}}">&raquo;</a></li>
+            <li><a href="?created_time={{created_time}}&page={{page+1}}">&raquo;</a></li>
             {% end %}
         </ul>
         <footer style="padding-top:17%">
