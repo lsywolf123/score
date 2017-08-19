@@ -170,7 +170,7 @@
             {% for added_customer_dict in added_customer_list %}
             <tr>
                 <td>{{added_customer_dict['num']}}</td>
-                <td>{{added_customer_dict['group_start_num']}} - {{added_customer_dict['group_start_num'] + added_customer_dict['count'] -1}}</td>
+                <td>{{added_customer_dict['group_start_num']}} - {{int(added_customer_dict['group_start_num']) + added_customer_dict['count'] -1}}</td>
                 <td>{{added_customer_dict['count']}}</td>
                 <td>{{added_customer_dict['created_time']}}</td>
                 <td>

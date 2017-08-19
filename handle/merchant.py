@@ -44,10 +44,6 @@ class MerchantBindCustomerHandle(BaseHandler):
             message = '身份证号为必填项'
         elif not phone:
             message = '手机号码为必填项'
-        elif not email:
-            message = '邮箱为必填项'
-        elif not we_chat:
-            message = '微信号为必填项'
         if message:
             self.render('merchant-bind.html', message=message, username=username, serial_num=serial_num,
                         password=password, name=name,identify_id=identify_id, phone=phone, email=email, we_chat=we_chat)

@@ -319,7 +319,7 @@ def give_goldbean(customer_id, gb_num):
     customer = db.customer_get_by_id(customer_id)
     values = {
         'merchant_id': customer['merchant_id'],
-        'consumer_name': '商家',
+        'consumer_name': '至尊会员-'.decode('utf-8') + customer['name'],
         'customer_id': customer_id,
         'consume_money': int(gb_num),
         'multiple': 1,

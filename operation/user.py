@@ -6,13 +6,14 @@ from db import api as db
 
 
 # 创建新用户
-def create_user(username, password, role):
+def create_user(username, password, role, created_at=None):
     if db.user_username_if_exist_in_db(username):
         raise exception.UserIsExistException()
     values = {
         'username': username,
         'password': password,
-        'role': role
+        'role': role,
+        'created_at': created_at if created_at else None
     }
     return db.user_create(values)
 

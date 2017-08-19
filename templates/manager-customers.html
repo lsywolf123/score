@@ -205,10 +205,11 @@
                 <th><a href="#">姓名</a></th>
                 <th><a href="#">所属商家</a></th>
                 <th><a href="#">金豆数量</a></th>
-                <th><a href="#">推荐基金</a></th>
+                <th><a href="#">激活金豆</a></th>
                 <th><a href="#">联系方式</a></th>
                 <th><a href="#">兑换次数</a></th>
                 <th><a href="#">兑换金额</a></th>
+                <th><a href="#">绑定时间</a></th>
                 <th style="width: 5.5em;"></th>
             </tr>
             </thead>
@@ -224,6 +225,7 @@
                 <td>{{customer['phone']}}</td>
                 <td>{{customer['gb_exchange_count']}}</td>
                 <td>{{customer['gain_money']}}</td>
+                <td>{{customer['created_at']}}</td>
                 <td>
                     <a href="/manager-customer-info?customer_id={{customer['id']}}"><i class="fa fa-book"></i></a>
                 </td>

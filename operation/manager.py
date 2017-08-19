@@ -68,7 +68,7 @@ def add_customer(start_num, end_num):
         values = {
             'serial_num': start_num + i
         }
-        ref = user.create_user(values['serial_num'], general_num(), '3')
+        ref = user.create_user(values['serial_num'], general_num(), '3', now)
         values['user_id'] = ref['id']
         values['created_at'] = now
         db.customer_create(values)
@@ -127,7 +127,7 @@ def get_added_customer_list(page):
             group_time = customer['created_at']
             group_customer_dict = {'count': 0,
                                    'created_time': group_time,
-                                   'group_start_num': customer['serial_num'],
+                                   'group_start_num': customer['username'],
                                    'num': count}
             count += 1
             added_customer_list.append(group_customer_dict)
@@ -135,7 +135,7 @@ def get_added_customer_list(page):
     page_num = len(added_customer_list)/10 + 1 if len(added_customer_list) % 10 else len(added_customer_list)/10
     if page < 1 or page > page_num:
         return []
-    return added_customer_list[10*(page-1):10*page]
+    return added_customer_list[10*(page-1):10*page], page_num
 
 
 # 新增客户详细信息
@@ -143,8 +143,8 @@ def get_added_customer_info(created_time, page):
     temp = db.customer_added_list_by_created_time(created_time)
     added_customer_info_list = []
     num = 1
-    for customer in temp:
-        customer_dict = dict(customer)
+    for user in temp:
+        customer_dict = dict(db.customer_get_by_serial_num(user['username']))
         user = db.user_get_by_id(customer_dict['user_id'])
         customer_dict['password'] = user['password']
         customer_dict['num'] = num
