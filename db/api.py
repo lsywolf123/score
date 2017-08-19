@@ -59,7 +59,18 @@ utc_now.override_time = None
 
 # user表操作
 def user_create(values, session=None):
-    values['created_at'] = utc_now()
+    if not values['created_at']:
+        values['created_at'] = utc_now()
+    if not session:
+        session = get_session()
+    with session.begin(subtransactions=True):
+        user_ref = models.User()
+        session.add(user_ref)
+        user_ref.update(values)
+    return user_ref
+
+
+def user_create_customer(values, session=None):
     if not session:
         session = get_session()
     with session.begin(subtransactions=True):
@@ -347,22 +358,23 @@ def customer_recent_list_by_merchant_id(merchant_id, session=None):
 
 
 def customer_added_list(session=None):
-    return model_query(models.Customer, session=session). \
-        order_by(models.Customer.created_at.desc()).\
+    return model_query(models.User, session=session). \
+        filter_by(role=3). \
+        order_by(models.User.created_at.desc()).\
         all()
 
 
 def customer_added_list_by_created_time(created_time, session=None):
-    return model_query(models.Customer, session=session). \
+    return model_query(models.User, session=session). \
         filter_by(created_at=created_time). \
-        order_by(models.Customer.created_at.desc()).\
+        order_by(models.User.created_at.desc()).\
         all()
 
 
 def customer_added_count_by_created_time(created_time, session=None):
-    return model_query(models.Customer, session=session). \
+    return model_query(models.User, session=session). \
         filter_by(created_at=created_time). \
-        order_by(models.Customer.created_at.desc()).\
+        order_by(models.User.created_at.desc()).\
         count()
 
 
@@ -445,8 +457,8 @@ def search_customer_count_by_phone(merchant_id, phone, session=None):
 def search_customer_count_by_gb_range(merchant_id, min_gb, max_gb, session=None):
     query = model_query(models.Customer, session=session). \
         filter_by(merchant_id=merchant_id). \
-        filter(models.Customer.gb >= min_gb). \
-        filter(models.Customer.gb < max_gb). \
+        filter(models.Customer.total_gb >= min_gb). \
+        filter(models.Customer.total_gb < max_gb). \
         count()
     return query
 
@@ -478,9 +490,9 @@ def customer_list_by_phone(merchant_id, phone, session=None):
 def customer_list_by_gb_range(merchant_id, min_gb, max_gb, session=None):
     return model_query(models.Customer, session=session). \
         filter_by(merchant_id=merchant_id). \
-        filter(models.Customer.gb >= min_gb). \
-        filter(models.Customer.gb < max_gb). \
-        order_by(models.Customer.gb.desc()).\
+        filter(models.Customer.total_gb >= min_gb). \
+        filter(models.Customer.total_gb < max_gb). \
+        order_by(models.Customer.total_gb.desc()).\
         all()
 
 

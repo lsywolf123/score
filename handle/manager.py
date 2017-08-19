@@ -197,8 +197,9 @@ class CustomerAddedListHandle(BaseHandler):
             self.redirect('/index')
         username = self.get_secure_cookie('username')
         page = self.get_argument('page')
-        added_customer_list = manager.get_added_customer_list(int(page))
-        page_num = len(added_customer_list) / 10 + 1 if len(added_customer_list) % 10 else len(added_customer_list) / 10
+        result = manager.get_added_customer_list(int(page))
+        added_customer_list = result[0]
+        page_num = result[1]
         info = {'page_num': page_num,
                 'added_customer_list': added_customer_list,
                 'page': int(page),
