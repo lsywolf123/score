@@ -142,18 +142,18 @@ def get_added_customer_list(page):
 def get_added_customer_info(created_time, page):
     temp = db.customer_added_list_by_created_time(created_time)
     added_customer_info_list = []
-    num = 1
-    for user in temp:
+    num = 1 + 10 * (page - 1)
+    for user in temp[10*(page-1):10*page]:
         customer_dict = dict(db.customer_get_by_serial_num(user['username']))
         user = db.user_get_by_id(customer_dict['user_id'])
         customer_dict['password'] = user['password']
         customer_dict['num'] = num
         added_customer_info_list.append(customer_dict)
         num += 1
-    page_num = len(added_customer_info_list) / 10 + 1 if len(added_customer_info_list) % 10 else len(added_customer_info_list) / 10
+    page_num = len(temp) / 10 + 1 if len(temp) % 10 else len(temp) / 10
     if page < 1 or page > page_num:
         return []
-    return added_customer_info_list[10*(page-1):10*page]
+    return added_customer_info_list
 
 
 # 新增客户详细信息数量
@@ -268,9 +268,11 @@ def customer_list(page):
         c_dict = dict(customer)
         c_dict['num'] = count
         merchant_id = customer['merchant_id']
-        c_dict['merchant'] = db.merchant_get_by_id(merchant_id)['name']
-        c_list.append(c_dict)
-        count += 1
+        merchant = db.merchant_get_by_id(merchant_id)
+        if merchant:
+            c_dict['merchant'] = merchant['name']
+            c_list.append(c_dict)
+            count += 1
     return c_list[10*(page-1):10*page]
 
 
