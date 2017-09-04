@@ -319,9 +319,11 @@ def get_search_customer_list(page, type, content):
         values = dict(customer)
         values['num'] = count
         merchant_id = customer['merchant_id']
-        values['merchant'] = db.merchant_get_by_id(merchant_id)['name']
-        c_list.append(values)
-        count += 1
+        merchant = db.merchant_get_by_id(merchant_id)
+        if merchant:
+            values['merchant'] = merchant['name']
+            c_list.append(values)
+            count += 1
     return c_list[10*(page-1):10*page]
 
 
