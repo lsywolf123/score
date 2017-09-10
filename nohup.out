@@ -5695,3 +5695,27 @@ WARNING:tornado.access:404 GET / (47.88.192.111) 0.49ms
 WARNING:tornado.access:405 CONNECT m.baidu.com:80 (222.186.63.235) 0.51ms
 WARNING:tornado.access:404 GET / (116.62.176.205) 0.49ms
 WARNING:tornado.access:405 CONNECT m.baidu.com:80 (222.186.63.235) 0.51ms
+WARNING:tornado.access:404 GET /favicon.ico (111.22.6.150) 1.57ms
+ERROR:tornado.application:Uncaught exception POST /manager-customer-list (111.22.6.150)
+HTTPServerRequest(protocol='http', host='www.bonier.site:8888', method='POST', uri='/manager-customer-list', version='HTTP/1.1', remote_ip='111.22.6.150', headers={'Origin': 'http://www.bonier.site:8888', 'Content-Length': '57', 'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip, deflate', 'Host': 'www.bonier.site:8888', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8', 'Upgrade-Insecure-Requests': '1', 'Connection': 'keep-alive', 'Referer': 'http://www.bonier.site:8888/manager-customer-list', 'Cache-Control': 'max-age=0', 'Cookie': 'UM_distinctid=15d1bce52af967-0ced9f02b2c677-574e6e46-3d10d-15d1bce52b15f1; username="2|1:0|10:1504492817|8:username|12:bWFuYWdlcg==|64b5f166f27d7621149492515e34b89d8dd0f6b85910b2f51c7b11d63806e1d7"; role="2|1:0|10:1504492817|4:role|4:MQ==|33b256be39318f04497fe10663d2c3a266233c5fdfc13af54462674eacc8f945"; user_id="2|1:0|10:1504492817|7:user_id|48:N2UzOTk4MmUtNjczOS0xMWU3LTkzMjEtMzQ5N2Y2ODhkM2M2|23d09dab160053866c4f9270b1c9193e7ffdd41b5486f473b86f3980d479bd4a"', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.109 Safari/537.36', 'Content-Type': 'application/x-www-form-urlencoded'})
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/tornado/web.py", line 1509, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/score1/handle/manager.py", line 262, in post
+    customer_list = manager.get_search_customer_list(1, type, content)
+  File "/score1/operation/manager.py", line 322, in get_search_customer_list
+    values['merchant'] = db.merchant_get_by_id(merchant_id)['name']
+TypeError: 'NoneType' object has no attribute '__getitem__'
+ERROR:tornado.access:500 POST /manager-customer-list (111.22.6.150) 23.82ms
+WARNING:tornado.access:404 GET http://domkrim.com/av.php (204.152.209.174) 0.76ms
+ERROR:tornado.application:Uncaught exception POST /manager-customer-list (111.22.6.150)
+HTTPServerRequest(protocol='http', host='www.bonier.site:8888', method='POST', uri='/manager-customer-list', version='HTTP/1.1', remote_ip='111.22.6.150', headers={'Origin': 'http://www.bonier.site:8888', 'Content-Length': '57', 'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip, deflate', 'Host': 'www.bonier.site:8888', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8', 'Upgrade-Insecure-Requests': '1', 'Connection': 'keep-alive', 'Referer': 'http://www.bonier.site:8888/manager-customer-list', 'Cache-Control': 'max-age=0', 'Cookie': 'UM_distinctid=15d1bce52af967-0ced9f02b2c677-574e6e46-3d10d-15d1bce52b15f1; username="2|1:0|10:1504492817|8:username|12:bWFuYWdlcg==|64b5f166f27d7621149492515e34b89d8dd0f6b85910b2f51c7b11d63806e1d7"; role="2|1:0|10:1504492817|4:role|4:MQ==|33b256be39318f04497fe10663d2c3a266233c5fdfc13af54462674eacc8f945"; user_id="2|1:0|10:1504492817|7:user_id|48:N2UzOTk4MmUtNjczOS0xMWU3LTkzMjEtMzQ5N2Y2ODhkM2M2|23d09dab160053866c4f9270b1c9193e7ffdd41b5486f473b86f3980d479bd4a"', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.109 Safari/537.36', 'Content-Type': 'application/x-www-form-urlencoded'})
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/tornado/web.py", line 1509, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/score1/handle/manager.py", line 262, in post
+    customer_list = manager.get_search_customer_list(1, type, content)
+  File "/score1/operation/manager.py", line 322, in get_search_customer_list
+    values['merchant'] = db.merchant_get_by_id(merchant_id)['name']
+TypeError: 'NoneType' object has no attribute '__getitem__'
+ERROR:tornado.access:500 POST /manager-customer-list (111.22.6.150) 27.17ms
