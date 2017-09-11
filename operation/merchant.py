@@ -206,7 +206,7 @@ def exchange_goldbean(merchant_id, serial_num, name, identify_id, ratio):
         raise exception.CustomerInfoNotMatch()
     if customer['gb'] < int(ratio) * 5000:
         raise exception.CustomerGoldbeanNotEnough()
-    if customer['qualification_gb'] < 5000:
+    if customer['qualification_gb'] < 500:
         raise exception.CustomerHasNoQualification()
     merchant = db.merchant_get_by_id(merchant_id)
     exchange_ratio = get_merchant_rule(merchant_id)
