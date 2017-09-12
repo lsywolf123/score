@@ -204,7 +204,7 @@ def exchange_goldbean(merchant_id, serial_num, name, identify_id, ratio):
         raise exception.SerialNumIsNotExist()
     if name != customer['name'] or identify_id != customer['identify_id']:
         raise exception.CustomerInfoNotMatch()
-    if customer['gb'] < int(ratio) * 5000:
+    if customer['gb'] < int(ratio) * 1000:
         raise exception.CustomerGoldbeanNotEnough()
     if customer['qualification_gb'] < 500:
         raise exception.CustomerHasNoQualification()
@@ -216,7 +216,7 @@ def exchange_goldbean(merchant_id, serial_num, name, identify_id, ratio):
     }
     db.merchant_update_by_id(merchant_id, values)
     values = {
-        'gb': customer['gb'] - int(ratio) * 5000,
+        'gb': customer['gb'] - int(ratio) * 1000,
         'gb_exchange_count': customer['gb_exchange_count'] + 1,
         'gain_money': customer['gain_money'] + exchange_ratio['level%s' % ratio],
         'qualification_gb': 0
@@ -227,7 +227,7 @@ def exchange_goldbean(merchant_id, serial_num, name, identify_id, ratio):
         'customer_name': customer['name'],
         'customer_id': customer['id'],
         'exchange_money': exchange_ratio['level%s' % ratio],
-        'exchange_goldbean': int(ratio) * 5000
+        'exchange_goldbean': int(ratio) * 1000
     }
     return db.exchange_create(values)
 
