@@ -216,8 +216,8 @@
                     <li>
                         <span class="text-info fa fa-paper-plane fa-fw"></span>
                         兑换资格：
-                        {% if customer_info['qualification_gb'] > 5000 %} 有
-                        {% else %} 无（离兑换资格还差{{5000 - customer_info['qualification_gb']}}推荐基金）
+                        {% if customer_info['qualification_gb'] > 500 %} 有
+                        {% else %} 无（离兑换资格还差{{500 - customer_info['qualification_gb']}}推荐基金）
                         {% end %}
                     </li>
                 </ul>
